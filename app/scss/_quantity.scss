@@ -1,0 +1,53 @@
+.quantity {
+  position: relative;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  @include fonts(38px, 800, 38px);
+  color: #fff;
+  width: 42px;
+  height: 38px;
+  float: left;
+  display: block;
+  border: none;
+  background-color: transparent;
+  user-select: none;
+}
+
+.quantity input:focus {
+  outline: none;
+}
+
+.quantity-nav {
+  float: left;
+  position: static;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 22px;
+  top: 45px;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  right: 0;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  right: 30px;
+}

@@ -1,0 +1,124 @@
+include pug-modules/mixins
+include pug-modules/headerMap
+
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Go-surf
+        meta(name="viewport", content="width=1250, maximum-scale=1")
+        link(rel="stylesheet", href="css/style.min.css")
+    body
+        header#header
+            .header_title go surf
+            .header_map
+                +north_shore
+                +south_shore
+                +west_shore
+                +east_shore
+            .header_aside
+                .logo
+                    a(href="#")
+                        img(src="img/logo.svg", alt="Logo")
+                nav.menu
+                    ul.menu_list
+                        +menu_item('#surf', 'img/nav-ico-1.svg', 'Surf', 'Surf')
+                        +menu_item('#travel', 'img/nav-ico-2.svg', 'Travel', 'Travel')
+                        +menu_item('#sleep', 'img/nav-ico-3.svg', 'Sleep', 'Sleep')
+                        +menu_item('#shop', 'img/nav-ico-4.svg', 'Shop', 'Shop')
+                .header_date
+                    #day
+                    span#month
+                    span#year
+                .header_location California
+            .header_arrows.animated.fadeInUp.slower.infinite
+                a(href="#header")
+                    img(src="img/down-arrows.svg", alt="arrows down")
+            .header_slider
+                +slider_item('Surf', 'North Shore', 'Condition', 'Radical', '#')
+                +slider_item('Surf', 'South Shore', 'Condition', 'Radical', '#')
+                +slider_item('Surf', 'West Shore', 'Condition', 'Radical', '#')
+                +slider_item('Surf', 'East Shore', 'Condition', 'Radical', '#')
+            .slider_dots
+                +slider_dots-item('01', 'North Shore')
+                +slider_dots-item('02', 'South Shore')
+                +slider_dots-item('03', 'West Shore')
+                +slider_dots-item('04', 'East Shore')
+        main.main
+            section#surf
+                +title('surf', 'surf')
+                +suptitle('current location', 'california usa')
+                .surf_map
+                    .surf_dots.surf_dots--1
+                        +surf_dots-in_map('malibu beach', 'california', '#', '7 - 11', '+7.3', '3 se')
+                    .surf_dots.surf_dots--2
+                        +surf_dots-in_map('airlie beach', 'queensland', '#', '9 - 13', '+2.3', '4 se')
+                    .surf_dots.surf_dots--3
+                        +surf_dots-in_map('cloud nine', 'siargao', '#', '5 - 10', '+5.6', '4.5 se')
+                    .surf_dots.surf_dots--4
+                        +surf_dots-in_map('vieux boucau', 'hossegor', '#', '8 - 14', '+6.1', '3.2 se')
+                    .surf_dots.surf_dots--5
+                        +surf_dots-in_map('porto vecchio', 'france', '#', '3 - 8', '+5.2', '3 se')
+                    .surf_dots.surf_dots--6
+                        +surf_dots-in_map('paradise beach', 'africa', '#', '10 - 115', '+4.7', '4 se')
+                    .surf_dots.surf_dots--7
+                        +surf_dots-in_map('corbyns сove', 'india', '#', '8 - 11', '+5.5', '4.6 se')
+                    .surf_dots.surf_dots--8
+                        +surf_dots-in_map('surfers paradise', 'australia', '#', '7 - 16', '+7.2', '3.9 se')
+                .surf_slider
+                    .surf_box(style="background-image: url(img/slide-1.jpg);")
+                        +surf_box-inner('malibu beach', 'california | usa', '#', 'view', ' surf')
+                    .surf_box(style="background-image: url(img/slide-2.jpg);")
+                        +surf_box-inner('airlie beach', 'queensland | usa', '#', 'view', ' surf')
+                    .surf_box(style="background-image: url(img/slide-3.jpg);")
+                        +surf_box-inner('cloud nine', 'siargao | philipines', '#', 'view', ' surf')
+                    .surf_box(style="background-image: url(img/slide-4.jpg);")
+                        +surf_box-inner('vieux boucau', 'hossegor | brazil', '#', 'view', ' surf')
+                    .surf_box(style="background-image: url(img/slide-1.jpg);")
+                        +surf_box-inner('porto vecchio', 'france | uerope', '#', 'view', ' surf')
+                    .surf_box(style="background-image: url(img/slide-2.jpg);")
+                        +surf_box-inner('paradise beach', 'jeffries | africa', '#', 'view', ' surf')
+                    .surf_box(style="background-image: url(img/slide-3.jpg);")
+                        +surf_box-inner('corbyns сove', 'andaman | india', '#', 'view', ' surf')
+                    .surf_box(style="background-image: url(img/slide-4.jpg);")
+                        +surf_box-inner('surfers paradise', 'queensland | australia', '#', 'view', ' surf')
+            section#travel
+                +title('travel', 'travel')
+                .travel_slider
+                    +travel_slider-item('shore', 'malibu beach usa', 'airline', 'virgin australia', 'california usa', '3,237 miles', '09 hours 15 minutes', '1,178 usd', '#')
+                    +travel_slider-item('shore', 'airlie beach usa', 'airline', 'virgin australia', 'queensland usa', '4,565 miles', '12 hours 30 minutes', '1,346 usd', '#')
+                    +travel_slider-item('shore', 'cloud nine philipines', 'airline', 'virgin australia', 'siargao philipines', '6,382 miles', '17 hours 55 minutes', '1,935 usd', '#')
+                    +travel_slider-item('shore', 'vieux boucau brazil', 'airline', 'virgin australia', 'hossegor brazil', '5,185 miles', '13 hours 20 minutes', '1,025 usd', '#')
+                    +travel_slider-item('shore', 'porto vecchio uerope', 'airline', 'virgin australia', 'france uerope', '1,505 miles', '04 hours 25 minutes', '1,215 usd', '#')
+                    +travel_slider-item('shore', 'paradise beach africa', 'airline', 'virgin australia', 'jeffries africa', '4,015 miles', '10 hours 55 minutes', '1,000 usd', '#')
+                    +travel_slider-item('shore', 'corbyns cove india', 'airline', 'virgin australia', 'andaman india', '3,803 miles', '10 hours 15 minutes', '1,420 usd', '#')
+                    +travel_slider-item('shore', 'surfers paradise australia', 'airline', 'virgin australia', 'queensland australia', '7,065 miles', '23 hours 05 minutes', '1,976 usd', '#')
+            section#sleep
+                +title('sleep', 'sleep')
+                .sleep_slider
+                    +sleep_slider-item('resorts', 'sandpearl usa', 'rating', 'excellent', 'sandpearl usa', '#')
+                    +sleep_slider-item('resorts', 'marriot usa', 'rating', 'excellent', 'marriot usa', '#')
+                    +sleep_slider-item('resorts', 'hilton philipines', 'rating', 'excellent', 'hilton philipines', '#')
+                    +sleep_slider-item('resorts', 'pavilion brazil', 'rating', 'excellent', 'pavilion brazil', '#')
+                    +sleep_slider-item('resorts', 'fairmont uerope', 'rating', 'excellent', 'fairmont uerope', '#')
+                    +sleep_slider-item('resorts', 'huntington africa', 'rating', 'excellent', 'huntington africa', '#')
+                    +sleep_slider-item('resorts', 'kahala india', 'rating', 'excellent', 'kahala india', '#')
+                    +sleep_slider-item('resorts', 'oceanfront australia', 'rating', 'excellent', 'oceanfront australia', '#')
+            section#shop
+                +title('shop', 'shop')
+                .shop_slider
+                    +shop_slider-item('style', 'north nugget tt surfboard', '$799', ' 99', '#', 'img/surfboard-1.png', 'double concave with vee shape low point', 'feels more stable under the surfer’s', 'improve wave catching capability', '$24.99', '$27.99')
+                    +shop_slider-item('style', 'north nugget tt surfboard', '$749', ' 99', '#', 'img/surfboard-2.png', 'double concave with vee shape low point', 'feels more stable under the surfer’s', 'improve wave catching capability', '$27.99', '$28.99')
+                    +shop_slider-item('style', 'north nugget tt surfboard', '$779', ' 99', '#', 'img/surfboard-3.png', 'double concave with vee shape low point', 'feels more stable under the surfer’s', 'improve wave catching capability', '$25.99', '$27.99')
+                    +shop_slider-item('style', 'north nugget tt surfboard', '$739', ' 99', '#', 'img/surfboard-4.png', 'double concave with vee shape low point', 'feels more stable under the surfer’s', 'improve wave catching capability', '$23.99', '$25.99')
+            footer.footer
+                a(href="#").btn go
+                    span surf
+                .footer_copy © Go-Surf 2018. All Rights Reserved.
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="js/libs.min.js")
+        script(src="js/main.js")
+        script(src="js/slick-slider.js")
+        script(src="js/quantity.js")
+        script(src="js/smooth-scrool.js")

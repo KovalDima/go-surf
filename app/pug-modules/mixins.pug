@@ -1,0 +1,192 @@
+mixin slider_item(suptitle, title, suptext, text, link)
+    .header_slider-item.slider_item
+        .slider_item-info
+            .slider_item-info_suptitle=suptitle
+            .slider_item-info_title=title
+            .slider_item-info_suptext=suptext
+            .slider_item-info_text=text
+            a.slider_item-info_link(href=link)
+                img(src="img/arrow-right.svg", alt="arrow-right")
+
+mixin slider_dots-item(number, name)
+    .slider_dots-item
+        .dots_box
+            .dots_box-number=number
+            .dots_box-name=name
+
+mixin menu_item(href, src, alt, span)
+    li
+        a(href=href)
+            img(src=src, alt=alt)
+            span=span
+
+mixin title(span, h3)
+    .title
+        span=span
+            h3=h3
+
+mixin suptitle(span, h4)
+    .suptitle
+        span=span
+        h4=h4
+
+mixin surf_box-inner(title_text, location_text, href, text, span_text)
+    .surf_box-inner
+        .surf_box-inner_title=title_text
+        .surf_box-inner_location=location_text
+        .surf_box-inner_btn
+            a(href=href).btn=text
+                span=span_text
+
+mixin surf_dots-in_map(title, suptitle, href, number_1, number_2, number_3)
+    .surf_dots-circle
+    .surf_dots-content
+        .surf_dots-row
+            .surf_dots-head
+                .surf_dots-title=title
+                .surf_dots-suptitle=suptitle
+            a(href=href).surf_dots-link
+                img(src="img/arrow-right.svg", alt="arrow right")
+        .surf_dots-row
+            .surf_dots-item
+                img(src="img/surf-icon.svg", alt="surf")
+                .surf_dots-number=number_1
+                .surf_dots-name surf (ft)
+            .surf_dots-item
+                img(src="img/water-icon.svg", alt="surf")
+                .surf_dots-number=number_2
+                .surf_dots-name tide (ft)
+            .surf_dots-item
+                img(src="img/wind-icon.svg", alt="surf")
+                .surf_dots-number=number_3
+                .surf_dots-name wind (kts)
+
+mixin travel_slider-item(sup_span, h4, descr_span, h5, destin_title, distance_title, time_title, price_title, href)
+    .travel_slider-item
+        .travel_slider-head(style="background-image: url(img/travel-bcg.png);")
+            .travel_slider-suptitle
+                .suptitle
+                    span=sup_span
+                    h4=h4
+        .travel_slider-descr(style="background-image: url(img/plane.png);")
+            .descr
+                span=descr_span
+                h5=h5
+                    img(src="img/avia-logo.svg", alt="avia logo")
+        .travel_slider-info
+            .travel_slider-item
+                .info_suptitle destination
+                .info_title=destin_title
+            .travel_slider-item
+                .info_suptitle distance
+                .info_title=distance_title
+            .travel_slider-item
+                .info_suptitle travel time
+                .info_title=time_title
+            .travel_slider-item
+                .info_suptitle pricing
+                .info_title=price_title
+        .travel_slider-btn
+            a(href=href).btn book
+                span flight
+
+mixin sleep_slider-item(sup_span, h4, descr_span, h5, resort_title, href)
+    .sleep_slider-item
+        .sleep_slider-head(style="background-image: url(img/sleep-bcg.png);")
+            .sleep_slider-suptitle
+                .suptitle
+                    span=sup_span
+                    h4=h4
+        .sleep_slider-descr(style="background-image: url(img/hammock-sleep.png);")
+            .descr
+                span=descr_span
+                h5=h5
+                    ul.sleep_star-list
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+        .sleep_slider-info
+            .sleep_slider-item
+                .info_suptitle resort
+                .info_title=resort_title
+            .sleep_slider-item
+                .info_suptitle # of nights
+                .info_title
+                    .quantity
+                        input(class="nights" type="number" min="1" max="9" step="1" value="5")
+                    div nights
+            .sleep_slider-item
+                .info_suptitle # of guests
+                .info_title
+                    .quantity
+                        input(class="guests" type="number" min="1" max="9" step="1" value="4")
+                    div guests
+            .sleep_slider-item
+                .info_suptitle pricing
+                .info_title
+                    span.summ(data-nights="97" data-guests="43")
+                    span usd
+        .sleep_slider-btn
+            a(href=href).btn book
+                span stay
+
+mixin shop_slider-item(descr_span, h5, cost, sup_cost, href, src, box_content_1, box_content_2, box_content_3, extras_cost, pura_cost)
+    .shop_slider-item
+        .shop_slider-inner
+            .shop_slider-info
+                .descr
+                    span=descr_span
+                    h5=h5
+                .shop_slider-price
+                    ul.shop_star-list
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+                        li
+                            img(src="img/star.svg")
+                    .cost=cost
+                        sup=sup_cost
+                .shop_slider-btn
+                    a(href=href).btn drop
+                        span in
+            .shop_slider-content
+                .surfboard
+                    img(src=src, alt="surfboard")
+                    .surfboard_box.surfboard_position--1
+                        .surfboard_box-circle
+                            .circle_row
+                            .circle_row
+                        .surfboard_box-content=box_content_1
+                    .surfboard_box.surfboard_position--2
+                        .surfboard_box-circle
+                            .circle_row
+                            .circle_row
+                        .surfboard_box-content=box_content_2
+                    .surfboard_box.surfboard_position--3
+                        .surfboard_box-circle
+                            .circle_row
+                            .circle_row
+                        .surfboard_box-content=box_content_3
+                .shop_extras
+                    .shop_extras-title extras
+                    .shop_extras-inner
+                        .shop_extras-box
+                            img(src="img/wax.png", alt="sex wax")
+                            .shop_extras-name sex wax
+                            .shop_extras-cost=extras_cost
+                        .shop_extras-box
+                            img(src="img/bracelet.png", alt="pura vida")
+                            .shop_extras-name pura vida
+                            .shop_extras-cost=pura_cost
